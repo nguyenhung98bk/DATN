@@ -2,7 +2,7 @@
 @section('title','Quản Lý Giáo Viên');
 @section('main')
     <div class="design_cauhoi">
-        <a href="{{url('admin/insertstudent')}}">
+        <a href="{{url('admin/insertteacher')}}">
             <button data-toggle="modal" data-target="#modal_form_horizontal2" type="button" style="background: #213351"
                     class="btn btn-primary">
                 Thêm

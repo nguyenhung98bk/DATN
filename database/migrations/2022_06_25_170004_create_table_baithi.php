@@ -17,10 +17,10 @@ class CreateTableBaithi extends Migration
             $table->increments('id');
             $table->integer('id_hocsinh')->unsigned();
             $table->integer('id_dethi')->unsigned();
-            $table->integer('socaudung');
-            $table->integer('diem');
+            $table->integer('socaudung')->nullable();
+            $table->float('diem')->nullable();
             $table->dateTime('thoigianbd');
-            $table->dateTime('thoigiankt');
+            $table->dateTime('thoigiankt')->nullable();
             $table->foreign('id_hocsinh')->references('id')->on('hocsinh');
             $table->foreign('id_dethi')->references('id')->on('dethi');
             $table->timestamps();

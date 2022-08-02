@@ -7,13 +7,16 @@ use App\Http\Controllers\Controller;
 use App\Lopthi;
 use App\Monhoc;
 use App\Giaovien;
+use Illuminate\Support\Facades\DB;
 
 class LopthiController extends Controller
 {
     public function getlistlopthi()
     {
-        $lopthi = Lopthi::leftjoin('monhoc', 'lopthi.id_monhoc', '=', 'monhoc.id')
-            ->leftjoin('giaovien', 'lopthi.id_giaovien', '=', 'giaovien.id')
+        $lopthi = DB::table('lopthi')
+            ->select('lopthi.id','tenlop','ten','tenmonhoc','thoigianbd','thoigiankt')
+            ->leftjoin('monhoc', 'lopthi.id_monhoc', '=', 'monhoc.id')
+            ->leftjoin('giaovien', 'giaovien.id', '=', 'lopthi.id_giaovien')
             ->paginate(10);
         return view('admin/lopthi/listlopthi', ['lopthi' => $lopthi]);
     }

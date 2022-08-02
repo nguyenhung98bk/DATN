@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'/admin'],function(){
+    Route::get('dashboard','Admin\DashboardController@dashboard')->name('dashboard');
+
     Route::get('/teacher','Admin\UserController@getlistteacher')->name('teacher');
     Route::get('/profileteacher/{id}','Admin\UserController@get_profileteacher')->name('profileteacher');
     Route::post('/profileteacher','Admin\UserController@post_profileteacher');
@@ -43,16 +45,32 @@ Route::group(['prefix'=>'/admin'],function(){
     Route::post('/sualopthi','Admin\LopthiController@post_sualopthi');
 
     Route::get('taodanhsachthi/{id}','Admin\DanhsachthiController@taodanhsachthi')->name('taodanhsachthi');
+    Route::get('themhocsinh/{id}','Admin\DanhsachthiController@get_themhocsinh');
     Route::POST('themhocsinh','Admin\DanhsachthiController@themhocsinh');
+    Route::get('deletedst/{id_hocsinh}{id_lopthi}','Admin\DanhsachthiController@deletedst');
 
     Route::get('dethi/{id}','Admin\DethiController@dethi')->name('dethi');
     Route::POST('insertdethi','Admin\DethiController@insertdethi');
 
+
     Route::get('cauhoi/{id}','Admin\CauhoiController@cauhoi')->name('cauhoi');
     Route::get('themcauhoi/{id}','Admin\CauhoiController@themcauhoi');
     Route::post('postcauhoi','Admin\CauhoiController@postcauhoi');
+
+    Route::get('ptch','Admin\DashboardController@ptch');
+    Route::get('tkds','Admin\DashboardController@tkds');
+
+    Route::get('xembaithi/{id_hocsinh}{id_lopthi}','Admin\BaithiController@xembaithi');
+    Route::get('xemchitiet/{id_baithi}','Admin\BaithiController@xemchitiet');
 });
 
 Route::group(['prefix'=>'/hocsinh'],function(){
     Route::get('baithi','Hocsinh\BaithiController@baithi');
+    Route::get('chuanbi/{id}','Hocsinh\BaithiController@chuanbi');
+    Route::get('batdau/{id}','Hocsinh\BaithiController@batdauthi');
+    Route::post('updatedapan','Hocsinh\BaithiController@updatedapan');
+    Route::get('nopbai/{id}','Hocsinh\BaithiController@nopbai');
+    Route::get('ketqua/{id}','Hocsinh\BaithiController@ketqua')->name('ketqua');
+    Route::get('lsthi','Hocsinh\BaithiController@lsthi');
+    Route::get('trangchu','Hocsinh\BaithiController@trangchu')->name('trangchu');
 });

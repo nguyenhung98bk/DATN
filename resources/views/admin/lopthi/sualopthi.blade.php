@@ -63,7 +63,7 @@
                 <tr>
                     <td class="style_row tbl-row" colspan="2">
                         <button type="submit" class="btn  btnsuach">Sửa</button>
-                        <button type="reset" class="btn  btnxoach">Thoát</button>
+                        <a href="{{url('admin/lopthi')}}"><button type="button" class="btn  btnxoach">Thoát</button></a>
                     </td>
                 </tr>
             </table>

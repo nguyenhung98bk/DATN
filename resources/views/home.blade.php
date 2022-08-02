@@ -4,6 +4,6 @@
     @elseif(Auth::user()->phanloai==1)
         @include("layouts/giaovien")
     @else
-        @include("layouts/admin")
+        @include("admin/dashboard")
     @endif
 @endif

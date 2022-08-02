@@ -14,13 +14,13 @@ class CauhoiController extends Controller
     {
         $monhoc = Monhoc::where('id', $id)->first();
         $cauhoi = Cauhoi::where('id_monhoc', $id)->paginate(10);
-        return view('admin/cauhoi', ['cauhoi' => $cauhoi, 'monhoc' => $monhoc]);
+        return view('admin/cauhoi/cauhoi', ['cauhoi' => $cauhoi, 'monhoc' => $monhoc]);
     }
 
     public function themcauhoi($id)
     {
         $monhoc = Monhoc::where('id', $id)->first();
-        return view('admin/themcauhoi', ['monhoc' => $monhoc]);
+        return view('admin/cauhoi/themcauhoi', ['monhoc' => $monhoc]);
     }
 
     public function postcauhoi(Request $request)
@@ -41,6 +41,6 @@ class CauhoiController extends Controller
                 ]);
             }
         }
-        return redirect()->route('cauhoi',['id'=>$request->id_monhoc]);
+        return redirect()->route('cauhoi',['id'=>$request->id_monhoc])->with('thongbao','Thêm câu hỏi thành công');
     }
 }

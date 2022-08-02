@@ -25,6 +25,7 @@
                     <th>Thời gian bắt đầu</th>
                     <th>Thời gian kết thúc</th>
                     <th>Sửa</th>
+                    <th>Danh sách thi</th>
                     <th>Đề thi</th>
                 </tr>
                 </thead>
@@ -38,11 +39,15 @@
                         <td>{{$value->thoigianbd}}</td>
                         <td>{{$value->thoigiankt}}</td>
                         <td><a href="{{url('admin/sualopthi/'.$value->id)}}">
-                                <button data-toggle="modal" class="btn btnsuach">Sửa</button>
+                                <button class="btn btnsuach">Sửa</button>
+                            </a>
+                        </td>
+                        <td><a href="{{url('admin/taodanhsachthi/'.$value->id)}}">
+                                <button class="btn btnsuach">Xem</button>
                             </a>
                         </td>
                         <td><a href="{{url('admin/dethi/'.$value->id)}}">
-                                <button data-toggle="modal" class="btn btnsuach">Xem</button>
+                                <button class="btn btnsuach">Xem</button>
                             </a>
                         </td>
                     </tr>

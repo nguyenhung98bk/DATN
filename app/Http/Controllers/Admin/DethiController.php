@@ -34,9 +34,7 @@ class DethiController extends Controller
                 'thoigian' => $request->thoigian,
             ]);
         }
-        $ten = Lopthi::where('id', $request->id_lopthi)->value('tenlop');
-        $dethi = Dethi::Where('id_lopthi', '=', $request->id_lopthi)->first();
-        return redirect()->route('dethi', ['dethi' => $dethi, 'tenlop' => $ten, 'id_lopthi' => $request->id_lopthi])
+        return redirect()->route('dethi', ['id' => $request->id_lopthi])
             ->with('thongbao','Cập nhật đề thi thành công');
     }
 }

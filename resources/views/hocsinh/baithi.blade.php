@@ -1,31 +1,26 @@
-@extends('layouts.app')
-
-@section('content')
-    <div class="container">
-        <h2>Bài thi sắp tới</h2>
-        <table class="table table-bordered">
-            <thead class="thead-light">
-            <tr>
-                <th>STT</th>
-                <th>Bài thi</th>
-                <th>Thời gian bắt đầu</th>
-                <th>Thời gian kết thúc</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($baithi as $key => $value)
-                <tr>
-                    <td>{{$key+1}}</td>
-                    <td>{{$value->tenlop}}</td>
-                    <td>{{$value->thoigianbd}}</td>
-                    <td>{{$value->thoigiankt}}</td>
-                    <td>
-                        <button class="btn btn-block"><a href="">Làm bài</a></button>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+@extends('layouts.hocsinh');
+@section('body')
+    <div class="container thiTHPTQG">
+        <div class="row main_test">
+            <div class="col-md-12">
+                <div class="col-md-12 tieudetintuc">
+                    <h3>Lớp thi của bạn</h3>
+                </div>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="row hinhanh">
+                            @foreach($baithi as $key => $value)
+                                <a href="{{url('hocsinh/chuanbi',$value->id_lopthi)}}" style="color: black;">
+                                    <div class="col-md-3 dethi " style="background-color: pink;" >
+                                        <p class="tenmon">{{$value->tenlop}}</p>
+                                        <p class="title">Thời gian có thể làm bài:<br>Từ: {{$value->thoigianbd}} <br>Đến: {{$value->thoigiankt}}</p>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-@endsection
+@stop

@@ -17,8 +17,8 @@ class CreateTableChitietbaithi extends Migration
             $table->increments('id');
             $table->integer('id_baithi')->unsigned();
             $table->integer('id_cauhoi')->unsigned();
-            $table->integer('dapanhs');
-            $table->integer('dungsai');
+            $table->integer('dapanhs')->nullable();
+            $table->integer('dungsai')->nullable();
             $table->foreign('id_baithi')->references('id')->on('baithi');
             $table->foreign('id_cauhoi')->references('id')->on('cauhoi');
             $table->timestamps();

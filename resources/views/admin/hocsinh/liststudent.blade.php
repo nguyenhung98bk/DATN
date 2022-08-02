@@ -19,7 +19,7 @@
                 <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Học tên</th>
+                    <th>Họ tên</th>
                     <th>Email</th>
                     <th>Ngày sinh</th>
                     <th>Lớp</th>
@@ -43,7 +43,7 @@
                         </td>
                         <td>{{$value->lop}}</td>
                         <td><a href="{{url('admin/profilestudent/'.$value->id_user)}}">
-                                <button data-toggle="modal" class="btn btnsuach">Sửa</button>
+                                <button class="btn btnsuach">Sửa</button>
                             </a>
                         </td>
                     </tr>

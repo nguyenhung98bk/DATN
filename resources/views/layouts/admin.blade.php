@@ -335,7 +335,7 @@
 
             <!-- Main navigation -->
             <ul class="navigation">
-                <li class="active"><a href="dashbroad_ad"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
+                <li><a href="{{url('admin/dashboard')}}"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 
                 <li>
                     <a href=""><span>Quản lý giáo viên</span> <i class="fas fa-chalkboard-teacher"></i></a>
@@ -383,38 +383,9 @@
                 </li>
 
                 <li>
-                    <a><span>Quản lý môn thi</span>
+                    <a href="{{url('admin/monhoc')}}"><span>Quản lý môn thi</span>
                         <i class="fas fa-book"></i></a>
-                    <ul>
-                        <li>
-                            <a href="{{url('admin/monhoc')}}"><span
-                                    style="padding-right: 80px">Danh sách môn thi</span> <i class="fas fa-book"></i>
-                            </a>
-                        </li>
-                        <li><a href="{{url('admin/insertmonhoc')}}"><span
-                                    style="padding-right: 50px">Thêm môn thi</span> <i class="fas fa-plus"></i> </a>
-                        </li>
-
-                    </ul>
                 </li>
-
-                <li>
-                    <a href="{{url('admin/khoi/dskhoi')}}"><span>Quản lý khối</span>
-                        <i class="fas fa-file-invoice"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="{{url('admin/khoi/dskhoi')}}"><span
-                                    style="padding-right: 80px">Danh sách khối</span> <i
-                                    class="fas fa-file-invoice"></i>
-                            </a>
-                        </li>
-                        <li><a href="{{url('admin/khoi/themkhoi')}}"><span style="padding-right: 50px">Thêm khối</span>
-                                <i class="fas fa-plus"></i> </a></li>
-
-                    </ul>
-                </li>
-
                 <li>
                     <a href="{{url('admin/user/dsuser')}}"><span>Quản lý users</span> <i class="fas fa-users"></i></a>
                     <ul>
@@ -429,12 +400,28 @@
                 </li>
 
                 <li>
-                    <a href="{{url('admin/ketqua/dsketqua')}}"><span>Quản lý kết quả</span> <i
+                    <a href="{{url('admin/baithi')}}"><span>Quản lý bài thi</span> <i
                             class="fas fa-file-invoice"></i></a>
 
                 </li>
 
-                <li><a href="bieudo"><span>Biểu đồ</span> <i class="icon-bars"></i></a></li>
+                <li>
+                    <a href="}"><span>Phân tích thống kê</span> <i class="icon-bars"></i></a>
+                    <ul>
+                        <li>
+                            <a href="{{url('admin/tkds')}}">
+                                <span style="padding-right: 80px">Thống kê điểm số</span>
+                                <i class="icon-bars"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/ptch')}}">
+                                <span style="padding-right: 80px">Phân tích câu hỏi</span>
+                                <i class="fa fa-question"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="#"><span>Cài đặt</span> <i class="fas fa-cog"></i></a>
 
